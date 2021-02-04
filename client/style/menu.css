@@ -39,3 +39,18 @@ body{
 .title{
     font-size: large;
 }
+.arrow{
+    background: rgb(179, 179, 179);
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 50%;
+    text-align: center;
+    /* padding: 3px 2px; */
+    margin-left:15px ;
+}
+.arrow:hover{
+    background-color: #000;
+    color: #fff;
+}

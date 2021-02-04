@@ -37,6 +37,7 @@ router.get('/all',(req,res)=>{
   })
 })
 
+
 // add sous category 
 router.post('/saddcategory',(req,res)=>{
 
@@ -64,5 +65,20 @@ router.get('/sall',(req,res)=>{
     console.log(err);
   })
 })
+
+// get all sous category linked with category 
+router.get('/:categoryParent',(req,res)=>{
+  console.log(req.body);
+  SCategory.find({categoryParent:req.params.categoryParent})
+  .then(doc=>{
+    res.send(doc)
+  })
+  .catch(err=>{
+    console.log(err)
+  })
+})
+// router.post('/senddata',(req,res)=>{
+//   console.log(req.body);
+// })
 
 module.exports = router;

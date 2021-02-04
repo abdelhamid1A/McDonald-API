@@ -64,7 +64,9 @@
             </div>
         </div>
     </div>
-
+    <input type="text" id="name">
+    <button onclick="sendData()">btn</button>
+<!-- <button onclick="getOne()">btn</button> -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
         integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
         crossorigin="anonymous"></script>
@@ -76,20 +78,56 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         async function getMenu() {
-            const doc = await axios.get('http://localhost:3000/all');
-            const data = doc.data;
+            var doc = await axios.get('http://localhost:3000/all');
+            var data = doc.data;
+            document.getElementById('menu').innerHTML =""
             for (let i = 0; i < data.length; i++) {
-                var stringTemp = `<a href="#">
-                        <div class="item">
+                var stringTemp = `
+                        <div class="item" id="cat">
                             <img src="../image/nav_full_menu_160x160_.jpg" alt="">
                             <span class="title">${data[i].catName} </span>
+                            <button onclick="getOne('${data[i]._id}')" class="arrow">></button>
+
                         </div>
-                    </a>`
-                document.getElementById('menu').innerHTML += stringTemp
+                      
+                    `
+                  
+                document.getElementById('menu').innerHTML += stringTemp;
+                
 
             }
 
         }
+        
+       async function getOne(id){ 
+        //    body={categoryParent:id};
+        //   console.log(body)
+           var doc = await axios.get('http://localhost:3000/'+id);
+           var data = doc.data;
+           console.log(data);
+           document.getElementById('menu').innerHTML =`<button onclick="getMenu()"><--</button>`
+            for (let i = 0; i < data.length; i++) {
+                var stringTemp = `
+                        <div class="item" id="cat">
+                            <img src="../image/nav_full_menu_160x160_.jpg" alt="">
+                            <span class="title">${data[i].sousCatName} </span>
+                            <button onclick="getOne('${data[i]._id}')" class="arrow">></button>
+
+                        </div>
+                      
+                    `
+                document.getElementById('menu').innerHTML += stringTemp;
+                
+
+            }
+
+        }
+        // async function sendData() {
+        //     var name  = document.getElementById('name').value;
+        //     body ={name:name}
+        //     var doc = await axios.post('http://localhost:3000/senddata',body)
+            
+        // }
     </script>
 </body>
 
