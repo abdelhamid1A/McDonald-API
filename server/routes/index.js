@@ -42,7 +42,8 @@ router.post('/saddcategory',(req,res)=>{
 
   // console.log(req.body);
   const sousCat = new SCategory({
-    sousCatName : req.body.name
+    sousCatName : req.body.name,
+    categoryParent : req.body.categoryParent
   })
   sousCat.save()
   .then(doc=>{
