@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #1b440a;
+}
+.card{
+    height: 400px;
+    width: 270px;
+    border-radius: 24px;
+}
+.icon{
+    background-color:#1b440a ;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+}
+.icon img{
+    height: 150px;
+    width: 150px;
+}
+.logo{
+    width: 220px;
+    height: 200px;
+}
+.pay{
+    height: 100px;
+    width: 370px;
+    border-radius: 24px;
+}
