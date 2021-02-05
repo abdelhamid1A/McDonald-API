@@ -75,6 +75,32 @@ async function getProducts(id) {
 
 }
 
-function hello(id) {
+async function hello(id) {
     console.log(id);
+    var doc = await axios.get('http://localhost:3000/product/' + id);
+    var data = doc.data[0];
+    // console.log(data);
+    document.getElementById('products').innerHTML = "";
+    // for (let i = 0; i < data.length; i++) {
+        var stringTemp = `
+        <div class="col-md-6  d-flex justify-content-center products shadow-lg p-3 mb-5 bg-white rounded">
+                    
+                        <div class="item " style="text-align: center;">
+                            <img src="../image/nav_full_menu_160x160_.jpg" alt="" class="">
+                            <div >
+                                <p>${data.productName}</p>
+                                <button class="btn btn-warning">${data.productPrice}</button><br>
+                                <span >${data.ingredien[0].elements}</span><br>
+                                <input type="number" name="" id="" value="1" min="1"><br>
+                                <button class="btn btn-warning mt-2">commande</button><br>
+                            </div>
+
+                        </div>
+                    
+                </div>   
+            `
+        document.getElementById('products').innerHTML += stringTemp;
+
+
+    // }
 }
