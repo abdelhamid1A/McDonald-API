@@ -4,6 +4,8 @@ const Category = require('../model/Category')
 const SCategory = require('../model/souscategory')
 const Product = require('../model/Product')
 const Ingredien = require('../model/Ingrediens')
+const mongoose = require('mongoose');
+
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -89,7 +91,7 @@ router.post('/addProduct', (req, res) => {
     productName: req.body.productName,
     productPrice: req.body.productPrice,
     category: req.body.category,
-    ingredien : req.body.ingredien
+    ingredien: req.body.ingredien
 
   })
   product.save()
@@ -103,36 +105,7 @@ router.post('/addProduct', (req, res) => {
 
 // get products from category 
 router.get('/products/:id', (req, res) => {
-  // Product.find({ category: req.params.id })
-  // Product.aggregate([
-  //   { $match :{category: req.params.id}},
-  //   {
-  //     $lookup:{
-  //       from : "ingrediens",
-  //       localField : "_id",
-  //       foreignField : "ingredien",
-
-  //       as :"ingredie",
-
-  //     }
-  //   },{ $sort: { _id: 1 } },
-  //   { $limit: 1 },
-  // ])
-  Product.aggregate([
-    { $match: { _id: req.params.id } },
-
-    {
-      $lookup: {
-        from: "ingrediens",
-        localField: "ingredien",
-        foreignField: "_id",
-
-        as: "test",
-      },
-    },
-    { $sort: { _id: 1 } },
-    { $limit: 1 },
-  ])
+  Product.find({ category: req.params.id })
     .then(doc => {
       res.status(200).send(doc)
     })
@@ -142,8 +115,20 @@ router.get('/products/:id', (req, res) => {
 })
 
 // get one Product 
-router.get('/product/:id',(req,res)=>{
-  Product.findById({_id : req.params.id})
+router.get('/product/:id', (req, res) => {
+  Product.aggregate([
+    { $match: { _id: mongoose.Types.ObjectId(req.params.id) } },
+
+    {
+      $lookup: {
+        from: "ingrediens",
+        localField: "ingredien",
+        foreignField: "_id",
+
+        as: "ingredien",
+      },
+    }
+  ])
   .then(doc => {
     res.send(doc)
   })
@@ -153,7 +138,7 @@ router.get('/product/:id',(req,res)=>{
 })
 
 // add Ingredien 
-router.post('/addIng',(req,res)=>{
+router.post('/addIng', (req, res) => {
   const ingredien = new Ingredien({
     elements: req.body.elements
   })
