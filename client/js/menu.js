@@ -113,10 +113,14 @@ async function hello(id) {
                                 <input type="text" class="form-control" id="mQty" aria-describedby="emailHelp" readonly>
                                 <label for="mTotal" class="form-label">Total</label>
                                 <input type="text" class="form-control" id="mTotal" aria-describedby="emailHelp" readonly>
+                                <label for="code" class="form-label">your Code</label>
+                                <input type="text" class="form-control" id="code" aria-describedby="emailHelp" placeholder="if you have a code "  onkeyup="getPoints()" >
+                                <span id="pts"></span>
+                                <div id="usingPoints"></div>
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                  <button type="button" class="btn btn-primary">Save changes</button>
+                                  <button type="button" class="btn btn-primary"  id="sendBtn" onclick="ordered('${data._id}')">ordered</button>
                                 </div>
                               </div>
                             </div>
@@ -156,4 +160,69 @@ function setDataInModal(){
     var qte = document.getElementById('mQty');
     price.value = document.getElementById('price').textContent
     qte.value = document.getElementById('qte').value
+}
+// random code 
+function randomCode(min, max) {  
+    return Math.floor(
+      Math.random() * (max - min + 1) + min
+    )
+  }
+
+  console.log(  
+    randomCode(1, 9999)
+  )
+
+
+async function getPoints(){
+    var code = document.getElementById('code').value;
+    var doc = await axios.get('http://localhost:3000/order/getPoints/'+code);
+    const data = doc.data;
+    var points = data.points;
+    if(points){
+        document.getElementById('pts').innerHTML = "your points is : <span id='pt'>"+points +"</span> DH you can use";
+        document.getElementById('usingPoints').innerHTML =`
+        <label for="usePoints" class="form-label">how mutch points want to use</label>
+        <input type="text" class="form-control" id="usePoints" aria-describedby="emailHelp" placeholder="if you have a code "  onkeyup="comparePoints()" >
+        <span id="errMessage"></span>`;
+    }else{
+        document.getElementById('pts').innerHTML = "";
+        document.getElementById('usingPoints').innerHTML = "";
+
+    }
+}
+
+function comparePoints(){
+    var MyPoints = document.getElementById('pt').textContent;
+    console.log(typeof(MyPoints))
+    MyPoints = parseInt(MyPoints)
+    var usePoints = document.getElementById('usePoints').value;
+    var message = document.getElementById('errMessage');
+    var btn = document.getElementById('sendBtn');
+    
+        if(usePoints != ""){
+            if(usePoints > MyPoints){
+                console.log('no');
+                message.innerHTML = 'you can\'t use more than ' + MyPoints;
+                message.style.color = 'red';
+                btn.setAttribute("disabled", true);
+            }
+            else{
+                console.log('yes');
+                message.innerHTML = "";
+                btn.removeAttribute("disabled");
+        
+            }
+        }
+    
+   
+    
+}
+
+async function ordered(id) { 
+    const productPrice = await axios.get('http://localhost:3000/order/getPrice/'+id);
+    const price = parseInt(productPrice.data.productPrice);
+    console.log(productPrice.data.productPrice);
+    var   qte = parseInt(document.getElementById('mQty').value);
+    var total = price * qte
+    console.log(total); 
 }
