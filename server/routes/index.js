@@ -4,6 +4,7 @@ const Category = require('../model/Category')
 const SCategory = require('../model/souscategory')
 const Product = require('../model/Product')
 const Ingredien = require('../model/Ingrediens')
+const Table = require('../model/Table')
 const mongoose = require('mongoose');
 
 
@@ -150,5 +151,21 @@ router.post('/addIng', (req, res) => {
       console.log(err)
     })
 })
+
+
+// add table  
+router.post('/addTable',(req,res)=>{
+  const table = new Table({
+    tableNumber : req.body.tableNumber
+  })
+  table.save()
+  .then(doc => {
+    res.send(doc)
+  })
+  .catch(err => {
+    console.log(err)
+  })
+})
+
 
 module.exports = router;
