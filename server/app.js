@@ -6,9 +6,10 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
+// const loge = require('./config/logger');
 // import cors from 'cors'
 
-
+// console.log(loge.info);
 mongoose.connect('mongodb://localhost/McBrief', {useNewUrlParser: true, useUnifiedTopology: true})
 .then(console.log('connected'))
 .catch(err=>{

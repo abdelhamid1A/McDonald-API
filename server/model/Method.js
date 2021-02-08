@@ -1,24 +1,8 @@
 const PDFDocument = require("pdfkit");
 const fs = require("fs");
 const Table = require('../model/Table')
-// class Method{
-//     static  getTime(){
-//         var date = new Date()
-//         var year =date.getFullYear()
-//         var month =date.getMonth()+1
-//         var day =date.getDate()
-//         var hour =date.getHours()
-//         var min =date.getMinutes()
-//         console.log(date);
-//         console.log(year);
-//         console.log(month);
-//         console.log(day);
-//         console.log(time);
-//         console.log(min);
-//         return year+"/"+month+"/"+day+"at"+ hour+":"+min
-//     }
-    
-// }
+const winston = require('winston')
+
 function getTime(){
     var date = new Date()
     var year =date.getFullYear()
@@ -74,5 +58,27 @@ async function tableReserved(table){
     var tbl = await Table.findOneAndUpdate({tableNumber:table},{$set:{available:false}})
     return tbl
 }
-module.exports = {getTime,exportPdf,randomCode,getPoints,tableReserved}
+const logConfiguration = {
+    transports: [
+      new winston.transports.Console(),
+      new winston.transports.File({
+        filename: "./logs/allLogs.log",
+      }),
+      new winston.transports.MongoDB({
+          db : "mongodb://localhost/McBrief",
+          options : { useUnifiedTopology: true },
+      })
+    ],
+  };
+  const loggger = winston.createLogger(logConfiguration);
+function saveLog(message,lavel,link){
+    var lg =  loggger.log({
+          message: message,
+          level: [lavel],
+          Date: getTime(),
+          http: "127.0.0.1:" + 3000 + "/"+link,
+        });
+      return lg
+}
+module.exports = {getTime,exportPdf,randomCode,getPoints,tableReserved,saveLog}
 // export default {hello}

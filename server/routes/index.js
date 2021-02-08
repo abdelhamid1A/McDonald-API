@@ -6,6 +6,11 @@ const Product = require('../model/Product')
 const Ingredien = require('../model/Ingrediens')
 const Table = require('../model/Table')
 const mongoose = require('mongoose');
+const winston = require('winston');
+require('winston-mongodb');
+const {getTime,saveLog} = require('../model/Method');
+
+
 
 
 /* GET home page. */
@@ -36,9 +41,11 @@ router.get('/all', (req, res) => {
   Category.find()
     .then(doc => {
       res.send(doc)
+      saveLog("getall","info","getallcategory")
     })
     .catch(err => {
       console.log(err);
+      saveLog(err.message,"error","getallcategory")
     })
 })
 
@@ -54,20 +61,25 @@ router.post('/saddcategory', (req, res) => {
   sousCat.save()
     .then(doc => {
       res.send(doc)
+      saveLog("add sub category","info","saddcategory")
     })
     .catch(err => {
       console.log(err);
+      saveLog(err.message,"error","saddcategory")
     })
 
 })
+
 // show all sous category 
 router.get('/sall', (req, res) => {
   SCategory.find()
     .then(doc => {
       res.send(doc)
+      saveLog("show all sub category","info","sall")
     })
     .catch(err => {
       console.log(err);
+      saveLog(err.message,"error","sall")
     })
 })
 
@@ -77,9 +89,11 @@ router.get('/:categoryParent', (req, res) => {
   SCategory.find({ categoryParent: req.params.categoryParent })
     .then(doc => {
       res.send(doc)
+      saveLog("show all sub category linked with category Parent","info",req.params.categoryParent)
     })
     .catch(err => {
       console.log(err)
+      saveLog(err.message,"error",req.params.categoryParent)
     })
 })
 // router.post('/senddata',(req,res)=>{
@@ -98,9 +112,11 @@ router.post('/addProduct', (req, res) => {
   product.save()
     .then(doc => {
       res.send(doc)
+      saveLog("add Product","info","addProduct")
     })
     .catch(err => {
       console.log(err)
+      saveLog(err.message,"error",req.params.categoryParent)
     })
 })
 
@@ -109,9 +125,11 @@ router.get('/products/:id', (req, res) => {
   Product.find({ category: req.params.id })
     .then(doc => {
       res.status(200).send(doc)
+      saveLog("get Product From category","info",`product/${req.params.id}`)
     })
     .catch(err => {
       console.log(err)
+      saveLog(err.message,"error",`product/${req.params.id}`)
     })
 })
 
@@ -132,9 +150,11 @@ router.get('/product/:id', (req, res) => {
   ])
   .then(doc => {
     res.send(doc)
+    saveLog("get one Product","info",`product/${req.params.id}`)
   })
   .catch(err => {
     console.log(err)
+    saveLog(err.message,"error",`product/${req.params.id}`)
   })
 })
 
@@ -146,9 +166,11 @@ router.post('/addIng', (req, res) => {
   ingredien.save()
     .then(doc => {
       res.send(doc)
+      saveLog("add ingredient","info","addIng")
     })
     .catch(err => {
       console.log(err)
+      saveLog(err.message,"error","addIng")
     })
 })
 
@@ -161,9 +183,11 @@ router.post('/addTable',(req,res)=>{
   table.save()
   .then(doc => {
     res.send(doc)
+    saveLog("add Table","info","addTable")
   })
   .catch(err => {
     console.log(err)
+    saveLog(err.message,"error","addTable")
   })
 })
 
