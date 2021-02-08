@@ -218,11 +218,40 @@ function comparePoints(){
     
 }
 
+// async function ordered(id) { 
+//     const productPrice = await axios.get('http://localhost:3000/order/getPrice/'+id);
+//     console.log(productPrice)
+//     const price = parseInt(productPrice.data.productPrice);
+//     console.log(productPrice.data.productPrice);
+//     var   qte = parseInt(document.getElementById('mQty').value);
+//     var total = price * qte
+//     console.log(total); 
+// }
+
 async function ordered(id) { 
-    const productPrice = await axios.get('http://localhost:3000/order/getPrice/'+id);
-    const price = parseInt(productPrice.data.productPrice);
-    console.log(productPrice.data.productPrice);
+
     var   qte = parseInt(document.getElementById('mQty').value);
-    var total = price * qte
-    console.log(total); 
+    var   usePoints = document.getElementById('usePoints');
+    var   code = document.getElementById('code').value;
+    var   tableSelect = document.getElementById('tableSelect').value;
+    console.log(tableSelect);
+    if(usePoints){
+        usePoints=usePoints.value
+        if(usePoints >0){
+            usePoints = parseInt(usePoints)
+            console.log(usePoints);
+        }
+        
+    }else{
+        
+        console.log('no');
+    }
+    // return;
+    body = {id : id,qte:qte,usePoints:usePoints,code:code,tableSelect:tableSelect}
+    const productPrice = await axios.post('http://localhost:3000/order/setOrder',body);
+    // const total = productPrice.data.total;
+    const client = productPrice.data.client;
+    // console.log(productPrice.data.productPrice);
+    // var total = price * qte
+    console.log(client); 
 }

@@ -1,10 +1,12 @@
 var createError = require('http-errors');
 var express = require('express');
+require('express-async-errors');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
+// import cors from 'cors'
 
 
 mongoose.connect('mongodb://localhost/McBrief', {useNewUrlParser: true, useUnifiedTopology: true})
