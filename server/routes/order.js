@@ -55,7 +55,7 @@ router.post('/setOrder', (req, res) => {
     // return
     Product.findById({ _id: req.body.id })
         // .select('productPrice')
-        .then(doc => {
+        .then(async doc => {
 
             var price = doc.productPrice;
             var usePoints = req.body.usePoints;
@@ -67,7 +67,14 @@ router.post('/setOrder', (req, res) => {
             // var restPoints = pts-usePoints
             console.log(pts);
             // console.log(restPoints);
-            // return;
+            const order = new Order({
+                productName : doc.productName,
+                productPrice : doc.productPrice,
+                productQte : qte,
+                tableNumber : req.body.tableSelect,
+
+            })
+            await order.save()
             Client.findOneAndUpdate({ code: req.body.code }, { $inc: { points: pts } }, { new: true })
                 .then(client => {
                     if (client) {

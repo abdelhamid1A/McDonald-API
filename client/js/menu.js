@@ -26,7 +26,7 @@ async function getOne(id) {
     var doc = await axios.get('http://localhost:3000/' + id);
     var data = doc.data;
     //    console.log(data);
-    document.getElementById('menu').innerHTML = `<button onclick="getMenu()"><--</button>`
+    document.getElementById('menu').innerHTML = `<button onclick="getMenu()" class="back"><--</button>`
     for (let i = 0; i < data.length; i++) {
         var stringTemp = `
                 <div class="item" id="cat">
@@ -95,7 +95,7 @@ async function hello(id) {
                                 <input type="hidden" value="${data.productPrice}" id="originPrice">
                                 <span >${data.ingredien[0].elements}</span><br>
                                 <input type="number" name="" id="qte" value="1" min="1" onchange="total()"><br>
-                                table number
+                                <span class="table">table number</span>
                                 <select name="" id="tableSelect" class="mt-2">
                                
                                 </select><br>
@@ -131,6 +131,7 @@ async function hello(id) {
             `
 
         document.getElementById('products').innerHTML += stringTemp;
+        changeLan()
 
 
     // }
@@ -255,3 +256,42 @@ async function ordered(id) {
     // var total = price * qte
     console.log(client); 
 }
+
+
+function changeLan(){ 
+    var langElem = document.querySelector('.langElem');
+    var lang = document.querySelectorAll('.lang');
+    
+     var table = document.querySelector('.table')
+    // localStorage.setItem('lang', "english")
+    var storageLan = localStorage.getItem('lang');
+   
+    // console.log(storageLan)
+    langElem.addEventListener('click',(e)=>{
+        var lg = e.target.getAttribute('language');
+        langElem.querySelector('.active').classList.remove('active');
+        e.target.classList.add('active')
+        localStorage.setItem('lang', lg)
+        storageLan = localStorage.getItem('lang');
+        console.log(storageLan)
+        setData(storageLan)
+    })
+    
+    setData(storageLan)
+    function setData(lan) {
+        var data = {
+            "english": {
+                "table": "table number ",
+                
+            },
+            "francais": {
+                "table": "numero de table "
+            }
+        }
+        console.log(lan)
+        
+        table.textContent = data[lan].table
+
+       
+    }
+ }

@@ -2,6 +2,7 @@ const PDFDocument = require("pdfkit");
 const fs = require("fs");
 const Table = require('../model/Table')
 const winston = require('winston')
+const Order = require('../model/Order')
 
 function getTime(){
     var date = new Date()
@@ -58,6 +59,9 @@ async function tableReserved(table){
     var tbl = await Table.findOneAndUpdate({tableNumber:table},{$set:{available:false}})
     return tbl
 }
+// async function makeOrder(body) {
+//     var order = await 
+// }
 const logConfiguration = {
     transports: [
       new winston.transports.Console(),
