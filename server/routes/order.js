@@ -52,7 +52,6 @@ router.get('/getPrice/:id', (req, res) => {
 
 router.post('/setOrder', (req, res) => {
     console.log(req.body);
-    // return
     Product.findById({ _id: req.body.id })
         // .select('productPrice')
         .then(async doc => {
@@ -68,46 +67,54 @@ router.post('/setOrder', (req, res) => {
             console.log(pts);
             // console.log(restPoints);
             const order = new Order({
-                productName : doc.productName,
-                productPrice : doc.productPrice,
-                productQte : qte,
-                tableNumber : req.body.tableSelect,
+                productName: doc.productName,
+                productPrice: doc.productPrice,
+                productQte: qte,
+                tableNumber: req.body.tableSelect,
 
             })
             await order.save()
-            Client.findOneAndUpdate({ code: req.body.code }, { $inc: { points: pts } }, { new: true })
-                .then(client => {
-                    if (client) {
+            
+            // var code = req.body.code
+            if (req.body.code) {
+                console.log("code");
+                // return
+                Client.findOneAndUpdate({ code: req.body.code }, { $inc: { points: pts } }, { new: true })
+                    .then(client => {
                         exportPdf(doc.productName, req.body.tableSelect, client.code, client.points, lastPrice)
                         tableReserved(req.body.tableSelect)
                         res.status(200).json({ client: client })
-                    } else {
-                        const cli = new Client({
-                            code: randomCode(1, 9999),
-                            points: getPoints(total)
-                        })
-                        cli.save()
-                            .then(MyNewClient => {
-                                tableReserved(req.body.tableSelect)
-                                exportPdf(doc.productName, req.body.tableSelect, MyNewClient.code, MyNewClient.points, lastPrice)
-                                res.status(200).json({
-                                    message: "file exported",
-                                });
-                                // res.status(200).json({MyNewClient:MyNewClient})
-                            }).catch(err => {
-                                console.log(err)
-                            })
-                    }
+                    })
+                    .catch(err => {
+                        console.log(err);
+                    })
+            } else {
+                console.log("no code");
+                const cli = new Client({
+                    code: randomCode(1, 9999),
+                    points: getPoints(total)
                 })
-            // res.status(200).json({total:total})
-            // res.send(total)
+                cli.save()
+                    .then(MyNewClient => {
+                        tableReserved(req.body.tableSelect)
+                        exportPdf(doc.productName, req.body.tableSelect, MyNewClient.code, MyNewClient.points, lastPrice)
+                        res.status(200).json({
+                            message: "file exported",
+                        });
+                        // res.status(200).json({ MyNewClient: MyNewClient })
+                    }).catch(err => {
+                        console.log(err)
+                    })
+            }
         })
+        
+
         .catch(err => {
             console.log(err)
         })
 })
 
-
+// console.log(randomCode(1, 9999));
 
 
 module.exports = router

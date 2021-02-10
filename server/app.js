@@ -10,7 +10,7 @@ const cors = require('cors');
 // import cors from 'cors'
 
 // console.log(loge.info);
-mongoose.connect('mongodb://localhost/McBrief', {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect('mongodb://localhost/McBrief', {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
 .then(console.log('connected'))
 .catch(err=>{
   console.log(err);
