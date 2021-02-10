@@ -91,7 +91,7 @@ async function hello(id) {
                             <img src="../image/nav_full_menu_160x160_.jpg" alt="" class="">
                             <div >
                                 <p>${data.productName}</p>
-                                <button class="btn btn-warning" id="price">${data.productPrice}</button><br>
+                                <button class="btn btn-warning" id="price">${data.productPrice} DH</button><br>
                                 <input type="hidden" value="${data.productPrice}" id="originPrice">
                                 <span >${data.ingredien[0].elements}</span><br>
                                 <input type="number" name="" id="qte" value="1" min="1" onchange="total()"><br>
@@ -109,11 +109,11 @@ async function hello(id) {
                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                <label for="mQty" class="form-label">quantity</label>
+                                <label for="mQty" class="form-label " id="qteLabel" >quantity</label>
                                 <input type="text" class="form-control" id="mQty" aria-describedby="emailHelp" readonly>
                                 <label for="mTotal" class="form-label">Total</label>
                                 <input type="text" class="form-control" id="mTotal" aria-describedby="emailHelp" readonly>
-                                <label for="code" class="form-label">your Code</label>
+                                <label for="code" class="form-label" id="codeLabel">your Code</label>
                                 <input type="text" class="form-control" id="code" aria-describedby="emailHelp" placeholder="if you have a code "  onkeyup="getPoints()" >
                                 <span id="pts"></span>
                                 <div id="usingPoints"></div>
@@ -219,15 +219,6 @@ function comparePoints(){
     
 }
 
-// async function ordered(id) { 
-//     const productPrice = await axios.get('http://localhost:3000/order/getPrice/'+id);
-//     console.log(productPrice)
-//     const price = parseInt(productPrice.data.productPrice);
-//     console.log(productPrice.data.productPrice);
-//     var   qte = parseInt(document.getElementById('mQty').value);
-//     var total = price * qte
-//     console.log(total); 
-// }
 
 async function ordered(id) { 
 
@@ -263,6 +254,8 @@ function changeLan(){
     var lang = document.querySelectorAll('.lang');
     
      var table = document.querySelector('.table')
+     var qteLabel = document.querySelector('#qteLabel')
+     var codeLabel = document.querySelector('#codeLabel')
     // localStorage.setItem('lang', "english")
     var storageLan = localStorage.getItem('lang');
    
@@ -282,15 +275,21 @@ function changeLan(){
         var data = {
             "english": {
                 "table": "table number ",
+                "qte":"Quantity",
+                "code": "your code"
                 
             },
             "francais": {
-                "table": "numero de table "
+                "table": "numero de table ",
+                "qte":"Quantite",
+                "code": "votre code"
             }
         }
         console.log(lan)
         
         table.textContent = data[lan].table
+        qteLabel.textContent = data[lan].qte
+        codeLabel.textContent = data[lan].code
 
        
     }
