@@ -465,3 +465,95 @@
 {"message":"show all sub category linked with category Parent","level":["info"],"Date":"2021_2_10at21_0_0","http":"127.0.0.1:3000/601bbaaa8fd08b3590e2add2"}
 {"message":"get Product From category","level":["info"],"Date":"2021_2_10at21_0_1","http":"127.0.0.1:3000/product/601bf2334b5111501c050d61"}
 {"message":"get one Product","level":["info"],"Date":"2021_2_10at21_0_3","http":"127.0.0.1:3000/product/601d70f7ed00ca5dc433c476"}
+{"message":"getall","level":["info"],"Date":"2021_2_10at21_3_18","http":"127.0.0.1:3000/getallcategory"}
+{"message":"show all sub category linked with category Parent","level":["info"],"Date":"2021_2_10at21_3_20","http":"127.0.0.1:3000/601bbaaa8fd08b3590e2add2"}
+{"message":"get Product From category","level":["info"],"Date":"2021_2_10at21_3_21","http":"127.0.0.1:3000/product/601bf2334b5111501c050d61"}
+{"message":"get one Product","level":["info"],"Date":"2021_2_10at21_3_23","http":"127.0.0.1:3000/product/601d70f7ed00ca5dc433c476"}
+{"message":"getall","level":["info"],"Date":"2021_2_10at21_4_18","http":"127.0.0.1:3000/getallcategory"}
+{"message":"show all sub category linked with category Parent","level":["info"],"Date":"2021_2_10at21_4_19","http":"127.0.0.1:3000/601bbaaa8fd08b3590e2add2"}
+{"message":"get Product From category","level":["info"],"Date":"2021_2_10at21_4_20","http":"127.0.0.1:3000/product/601bf2334b5111501c050d61"}
+{"message":"get one Product","level":["info"],"Date":"2021_2_10at21_4_22","http":"127.0.0.1:3000/product/601d70f7ed00ca5dc433c476"}
+{"message":"getall","level":["info"],"Date":"2021_2_10at21_4_48","http":"127.0.0.1:3000/getallcategory"}
+{"message":"show all sub category linked with category Parent","level":["info"],"Date":"2021_2_10at21_4_49","http":"127.0.0.1:3000/601bbaaa8fd08b3590e2add2"}
+{"message":"get Product From category","level":["info"],"Date":"2021_2_10at21_4_50","http":"127.0.0.1:3000/product/601bf2334b5111501c050d61"}
+{"message":"get one Product","level":["info"],"Date":"2021_2_10at21_4_51","http":"127.0.0.1:3000/product/601d70f7ed00ca5dc433c476"}
+{"message":"getall","level":["info"],"Date":"2021_2_11at18_48_51","http":"127.0.0.1:3000/getallcategory"}
+{"message":"show all sub category linked with category Parent","level":["info"],"Date":"2021_2_11at18_50_26","http":"127.0.0.1:3000/601bbaaa8fd08b3590e2add2"}
+{"message":"get Product From category","level":["info"],"Date":"2021_2_11at18_50_26","http":"127.0.0.1:3000/product/601bf2334b5111501c050d61"}
+{"message":"get one Product","level":["info"],"Date":"2021_2_11at18_50_30","http":"127.0.0.1:3000/product/601d7106ed00ca5dc433c477"}
+{"message":"getall","level":["info"],"Date":"2021_2_11at18_51_5","http":"127.0.0.1:3000/getallcategory"}
+{"message":"show all sub category linked with category Parent","level":["info"],"Date":"2021_2_11at18_51_6","http":"127.0.0.1:3000/601bbaaa8fd08b3590e2add2"}
+{"message":"get Product From category","level":["info"],"Date":"2021_2_11at18_51_7","http":"127.0.0.1:3000/product/601bf2334b5111501c050d61"}
+{"message":"get one Product","level":["info"],"Date":"2021_2_11at18_51_8","http":"127.0.0.1:3000/product/601d7106ed00ca5dc433c477"}
+{"message":"getall","level":["info"],"Date":"2021_2_11at19_1_53","http":"127.0.0.1:3000/getallcategory"}
+{"message":"show all sub category linked with category Parent","level":["info"],"Date":"2021_2_11at19_1_55","http":"127.0.0.1:3000/601bbaaa8fd08b3590e2add2"}
+{"message":"get Product From category","level":["info"],"Date":"2021_2_11at19_1_56","http":"127.0.0.1:3000/product/601bf2334b5111501c050d61"}
+{"message":"get one Product","level":["info"],"Date":"2021_2_11at19_1_57","http":"127.0.0.1:3000/product/601d7106ed00ca5dc433c477"}
+{"message":"getall","level":["info"],"Date":"2021_2_11at19_7_25","http":"127.0.0.1:3000/getallcategory"}
+{"message":"show all sub category linked with category Parent","level":["info"],"Date":"2021_2_11at19_7_25","http":"127.0.0.1:3000/601bbaaa8fd08b3590e2add2"}
+{"message":"get Product From category","level":["info"],"Date":"2021_2_11at19_7_26","http":"127.0.0.1:3000/product/601bf2334b5111501c050d61"}
+{"message":"get one Product","level":["info"],"Date":"2021_2_11at19_7_27","http":"127.0.0.1:3000/product/601d7106ed00ca5dc433c477"}
+{"message":"getall","level":["info"],"Date":"2021_2_11at19_12_1","http":"127.0.0.1:3000/getallcategory"}
+{"message":"show all sub category linked with category Parent","level":["info"],"Date":"2021_2_11at19_12_2","http":"127.0.0.1:3000/601bbaaa8fd08b3590e2add2"}
+{"message":"get Product From category","level":["info"],"Date":"2021_2_11at19_12_3","http":"127.0.0.1:3000/product/601bf2334b5111501c050d61"}
+{"message":"get one Product","level":["info"],"Date":"2021_2_11at19_12_4","http":"127.0.0.1:3000/product/601d7106ed00ca5dc433c477"}
+{"message":"getall","level":["info"],"Date":"2021_2_11at19_13_53","http":"127.0.0.1:3000/getallcategory"}
+{"message":"show all sub category linked with category Parent","level":["info"],"Date":"2021_2_11at19_13_54","http":"127.0.0.1:3000/601bbaaa8fd08b3590e2add2"}
+{"message":"get Product From category","level":["info"],"Date":"2021_2_11at19_13_55","http":"127.0.0.1:3000/product/601bf2334b5111501c050d61"}
+{"message":"get one Product","level":["info"],"Date":"2021_2_11at19_13_56","http":"127.0.0.1:3000/product/601d7106ed00ca5dc433c477"}
+{"message":"getall","level":["info"],"Date":"2021_2_11at19_16_25","http":"127.0.0.1:3000/getallcategory"}
+{"message":"show all sub category linked with category Parent","level":["info"],"Date":"2021_2_11at19_16_27","http":"127.0.0.1:3000/601bbaaa8fd08b3590e2add2"}
+{"message":"get Product From category","level":["info"],"Date":"2021_2_11at19_16_28","http":"127.0.0.1:3000/product/601bf2334b5111501c050d61"}
+{"message":"get one Product","level":["info"],"Date":"2021_2_11at19_16_29","http":"127.0.0.1:3000/product/601d7106ed00ca5dc433c477"}
+{"message":"getall","level":["info"],"Date":"2021_2_11at19_18_6","http":"127.0.0.1:3000/getallcategory"}
+{"message":"show all sub category linked with category Parent","level":["info"],"Date":"2021_2_11at19_18_8","http":"127.0.0.1:3000/601bbaaa8fd08b3590e2add2"}
+{"message":"get Product From category","level":["info"],"Date":"2021_2_11at19_18_16","http":"127.0.0.1:3000/product/601bf2334b5111501c050d61"}
+{"message":"get one Product","level":["info"],"Date":"2021_2_11at19_18_18","http":"127.0.0.1:3000/product/601d7e261fed141bc4c23663"}
+{"message":"getall","level":["info"],"Date":"2021_2_11at19_18_42","http":"127.0.0.1:3000/getallcategory"}
+{"message":"show all sub category linked with category Parent","level":["info"],"Date":"2021_2_11at19_18_43","http":"127.0.0.1:3000/601bbaaa8fd08b3590e2add2"}
+{"message":"get Product From category","level":["info"],"Date":"2021_2_11at19_18_44","http":"127.0.0.1:3000/product/601bf2334b5111501c050d61"}
+{"message":"get one Product","level":["info"],"Date":"2021_2_11at19_18_45","http":"127.0.0.1:3000/product/601d7e261fed141bc4c23663"}
+{"message":"getall","level":["info"],"Date":"2021_2_11at19_22_9","http":"127.0.0.1:3000/getallcategory"}
+{"message":"show all sub category linked with category Parent","level":["info"],"Date":"2021_2_11at19_22_9","http":"127.0.0.1:3000/601bbaaa8fd08b3590e2add2"}
+{"message":"get Product From category","level":["info"],"Date":"2021_2_11at19_22_10","http":"127.0.0.1:3000/product/601bf2334b5111501c050d61"}
+{"message":"get one Product","level":["info"],"Date":"2021_2_11at19_22_11","http":"127.0.0.1:3000/product/601d7106ed00ca5dc433c477"}
+{"message":"getall","level":["info"],"Date":"2021_2_11at19_39_41","http":"127.0.0.1:3000/getallcategory"}
+{"message":"show all sub category linked with category Parent","level":["info"],"Date":"2021_2_11at19_39_42","http":"127.0.0.1:3000/601bbaaa8fd08b3590e2add2"}
+{"message":"get Product From category","level":["info"],"Date":"2021_2_11at19_39_43","http":"127.0.0.1:3000/product/601bf2334b5111501c050d61"}
+{"message":"get one Product","level":["info"],"Date":"2021_2_11at19_39_44","http":"127.0.0.1:3000/product/601d7106ed00ca5dc433c477"}
+{"message":"getall","level":["info"],"Date":"2021_2_11at19_40_24","http":"127.0.0.1:3000/getallcategory"}
+{"message":"show all sub category linked with category Parent","level":["info"],"Date":"2021_2_11at19_40_24","http":"127.0.0.1:3000/601bbaaa8fd08b3590e2add2"}
+{"message":"get Product From category","level":["info"],"Date":"2021_2_11at19_40_25","http":"127.0.0.1:3000/product/601bf2334b5111501c050d61"}
+{"message":"get one Product","level":["info"],"Date":"2021_2_11at19_40_26","http":"127.0.0.1:3000/product/601d7106ed00ca5dc433c477"}
+{"message":"getall","level":["info"],"Date":"2021_2_11at19_44_19","http":"127.0.0.1:3000/getallcategory"}
+{"message":"show all sub category linked with category Parent","level":["info"],"Date":"2021_2_11at19_44_20","http":"127.0.0.1:3000/601bbaaa8fd08b3590e2add2"}
+{"message":"get Product From category","level":["info"],"Date":"2021_2_11at19_44_21","http":"127.0.0.1:3000/product/601bf2334b5111501c050d61"}
+{"message":"get one Product","level":["info"],"Date":"2021_2_11at19_44_22","http":"127.0.0.1:3000/product/601d7106ed00ca5dc433c477"}
+{"message":"getall","level":["info"],"Date":"2021_2_11at19_47_13","http":"127.0.0.1:3000/getallcategory"}
+{"message":"show all sub category linked with category Parent","level":["info"],"Date":"2021_2_11at19_47_14","http":"127.0.0.1:3000/601bbaaa8fd08b3590e2add2"}
+{"message":"get Product From category","level":["info"],"Date":"2021_2_11at19_47_15","http":"127.0.0.1:3000/product/601bf2334b5111501c050d61"}
+{"message":"get one Product","level":["info"],"Date":"2021_2_11at19_47_16","http":"127.0.0.1:3000/product/601d7106ed00ca5dc433c477"}
+{"message":"getall","level":["info"],"Date":"2021_2_11at19_51_29","http":"127.0.0.1:3000/getallcategory"}
+{"message":"show all sub category linked with category Parent","level":["info"],"Date":"2021_2_11at19_51_30","http":"127.0.0.1:3000/601bbaaa8fd08b3590e2add2"}
+{"message":"get Product From category","level":["info"],"Date":"2021_2_11at19_51_31","http":"127.0.0.1:3000/product/601bf2334b5111501c050d61"}
+{"message":"get one Product","level":["info"],"Date":"2021_2_11at19_51_32","http":"127.0.0.1:3000/product/601d7106ed00ca5dc433c477"}
+{"message":"getall","level":["info"],"Date":"2021_2_11at19_53_6","http":"127.0.0.1:3000/getallcategory"}
+{"message":"show all sub category linked with category Parent","level":["info"],"Date":"2021_2_11at19_53_19","http":"127.0.0.1:3000/601bbaaa8fd08b3590e2add2"}
+{"message":"get Product From category","level":["info"],"Date":"2021_2_11at19_53_21","http":"127.0.0.1:3000/product/601bf2334b5111501c050d61"}
+{"message":"get one Product","level":["info"],"Date":"2021_2_11at19_53_22","http":"127.0.0.1:3000/product/601d7106ed00ca5dc433c477"}
+{"message":"getall","level":["info"],"Date":"2021_2_11at19_55_30","http":"127.0.0.1:3000/getallcategory"}
+{"message":"show all sub category linked with category Parent","level":["info"],"Date":"2021_2_11at19_55_31","http":"127.0.0.1:3000/601bbaaa8fd08b3590e2add2"}
+{"message":"get Product From category","level":["info"],"Date":"2021_2_11at19_55_32","http":"127.0.0.1:3000/product/601bf2334b5111501c050d61"}
+{"message":"get one Product","level":["info"],"Date":"2021_2_11at19_55_33","http":"127.0.0.1:3000/product/601d7106ed00ca5dc433c477"}
+{"message":"getall","level":["info"],"Date":"2021_2_11at19_56_17","http":"127.0.0.1:3000/getallcategory"}
+{"message":"show all sub category linked with category Parent","level":["info"],"Date":"2021_2_11at19_56_19","http":"127.0.0.1:3000/601bbaaa8fd08b3590e2add2"}
+{"message":"get Product From category","level":["info"],"Date":"2021_2_11at19_56_20","http":"127.0.0.1:3000/product/601bf2334b5111501c050d61"}
+{"message":"get one Product","level":["info"],"Date":"2021_2_11at19_56_31","http":"127.0.0.1:3000/product/601d70f7ed00ca5dc433c476"}
+{"message":"getall","level":["info"],"Date":"2021_2_11at19_57_26","http":"127.0.0.1:3000/getallcategory"}
+{"message":"show all sub category linked with category Parent","level":["info"],"Date":"2021_2_11at19_57_27","http":"127.0.0.1:3000/601bbaaa8fd08b3590e2add2"}
+{"message":"get Product From category","level":["info"],"Date":"2021_2_11at19_57_28","http":"127.0.0.1:3000/product/601bf2334b5111501c050d61"}
+{"message":"get one Product","level":["info"],"Date":"2021_2_11at19_57_29","http":"127.0.0.1:3000/product/601d7e261fed141bc4c23663"}
+{"message":"getall","level":["info"],"Date":"2021_2_11at19_57_59","http":"127.0.0.1:3000/getallcategory"}
+{"message":"show all sub category linked with category Parent","level":["info"],"Date":"2021_2_11at19_58_0","http":"127.0.0.1:3000/601bbaaa8fd08b3590e2add2"}
+{"message":"get Product From category","level":["info"],"Date":"2021_2_11at19_58_0","http":"127.0.0.1:3000/product/601bf2334b5111501c050d61"}
+{"message":"get one Product","level":["info"],"Date":"2021_2_11at19_58_1","http":"127.0.0.1:3000/product/601d7106ed00ca5dc433c477"}
